@@ -25,7 +25,7 @@ SECRET_KEY = 'ev4(o$+gh+odr3vd#nt@s5&iabqey_r4h=m1w2f)_kmft5r#$k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'content',
     'rest_framework',
     'device_management',
+	'cms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -78,10 +79,24 @@ WSGI_APPLICATION = 'public_wifi.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'database',
     }
+	
+
+
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'public_wif',
+#        'USER': 'public_wifi_user',
+#        'PASSWORD': 'fedora25',
+#        'HOST': 'localhost',
+#        'PORT': '',
+#   }
+
+
 }
 
 
@@ -104,3 +119,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/mnt/public_wifi_storage/public_wifi_content'
+
