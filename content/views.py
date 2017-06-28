@@ -55,14 +55,3 @@ def get_movies_per_category(request,cat_id,page):
 	return response
 
 
-@api_view(['GET'])
-def homepage(request):
-
-
-	dict = {}
-	categories = Category.objects.filter(confirmed=True)
-	serializer = CategoryDetailedSerializer(categories,many=True)
-	dict['catogories'] = serializer.data
-
-	response = Response(serializer.data)
-	return response

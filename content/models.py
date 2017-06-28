@@ -31,6 +31,9 @@ class Movie(models.Model):
 	description = models.CharField(max_length=1000,null=True,blank=True)
 	order = models.IntegerField(default=0)
 
+	def __unicode__(self):
+		return self.name
+
 
 class MovieParticipant(models.Model):
 	movie = models.ForeignKey(Movie)

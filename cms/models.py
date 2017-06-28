@@ -10,6 +10,7 @@ class HomePageBanner(models.Model):
 	image = models.ImageField(upload_to="images")
 	movie = models.ForeignKey(Movie)
 	order = models.IntegerField(default=0)
+	confirmed = models.BooleanField(default = False)
 
 class RecommendedMovies(models.Model): 
 	movie = models.ForeignKey(Movie)

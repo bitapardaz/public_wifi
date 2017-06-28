@@ -19,7 +19,6 @@ from django.contrib import admin
 import views
 
 urlpatterns = [
-    url(r'^homepage/',views.homepage),
     url(r'^get_movies_per_category/(?P<cat_id>[0-9]+)/(?P<page>[0-9]+)/',views.get_movies_per_category),
     url(r'^get_movie_details/(?P<movie_id>[0-9]+)/',views.get_movie_details),
     url(r'^check_voucher/(?P<voucher_id>[0-9]+)/',views.check_voucher),

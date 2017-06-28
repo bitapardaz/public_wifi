@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'content',
     'rest_framework',
     'device_management',
-	'cms',
+    'cms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -121,5 +121,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/mnt/public_wifi_storage/public_wifi_content'
-
+MEDIA_ROOT = '/mnt/Workspace/public_wifi_content/'
